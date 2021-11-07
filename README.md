@@ -10,6 +10,9 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
+![image](https://user-images.githubusercontent.com/11325484/140663654-0d74b22e-1200-4664-9d2a-1b5b47cddee8.png)
+
+
 ## Learn more
 
   * Official website: https://www.phoenixframework.org/
