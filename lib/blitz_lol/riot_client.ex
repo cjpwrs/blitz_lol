@@ -85,7 +85,7 @@ defmodule BlitzLol.RiotClient do
      ["NA1_4095008822", "NA1_4095014149", "NA1_4094938474", "NA1_4094905932", "NA1_4094903353"]}
   """
   @spec fetch_matches(routing_value_type(), String.t(), map) ::
-  {:ok, list(String.t())} | {:error, any()}
+          {:ok, list(String.t())} | {:error, any()}
   def fetch_matches(routing_value, puuid, params) do
     request_path = "/match/v5/matches/by-puuid/#{puuid}/ids"
     request_url = build_url(routing_value, request_path, params)

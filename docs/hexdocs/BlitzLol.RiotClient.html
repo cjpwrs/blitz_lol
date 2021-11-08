@@ -10,7 +10,7 @@
     <title>BlitzLol.RiotClient — blitz_lol v0.1.0</title>
     <link rel="stylesheet" href="dist/elixir-a172fe91e725dcb259e2.css" />
 
-    <script src="dist/sidebar_items-d6b5a17038.js"></script>
+    <script src="dist/sidebar_items-9b3c4776a7.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -255,13 +255,13 @@ Functions
 
       </div>
 
-<p>Fetches a match from the Riot API</p><p>Example request:</p><pre><code class="makeup elixir"><span class="n">fetch_match</span><span class="p" data-group-id="3913166896-1">(</span><span class="s">&quot;americas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NA1_4095008822&quot;</span><span class="p" data-group-id="3913166896-1">)</span></code></pre><p>Example response:</p><pre><code class="makeup elixir"><span class="p" data-group-id="3747158821-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="3747158821-2">%{</span><span class="w">
-      </span><span class="s">&quot;info&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="3747158821-3">%{</span><span class="w">
-        </span><span class="s">&quot;participants&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="3747158821-4">[</span><span class="p" data-group-id="3747158821-5">%{</span><span class="n">...</span><span class="p" data-group-id="3747158821-5">}</span><span class="p" data-group-id="3747158821-4">]</span><span class="w">
-      </span><span class="p" data-group-id="3747158821-3">}</span><span class="p">,</span><span class="w">
-      </span><span class="s">&quot;metadata&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="3747158821-6">%{</span><span class="p" data-group-id="3747158821-6">}</span><span class="w">
-    </span><span class="p" data-group-id="3747158821-2">}</span><span class="p" data-group-id="3747158821-1">}</span></code></pre>
+<p>Fetches a match from the Riot API</p><p>Example request:</p><pre><code class="makeup elixir"><span class="n">fetch_match</span><span class="p" data-group-id="9053717683-1">(</span><span class="s">&quot;americas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NA1_4095008822&quot;</span><span class="p" data-group-id="9053717683-1">)</span></code></pre><p>Example response:</p><pre><code class="makeup elixir"><span class="p" data-group-id="3951508005-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="3951508005-2">%{</span><span class="w">
+      </span><span class="s">&quot;info&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="3951508005-3">%{</span><span class="w">
+        </span><span class="s">&quot;participants&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="3951508005-4">[</span><span class="p" data-group-id="3951508005-5">%{</span><span class="n">...</span><span class="p" data-group-id="3951508005-5">}</span><span class="p" data-group-id="3951508005-4">]</span><span class="w">
+      </span><span class="p" data-group-id="3951508005-3">}</span><span class="p">,</span><span class="w">
+      </span><span class="s">&quot;metadata&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="3951508005-6">%{</span><span class="p" data-group-id="3951508005-6">}</span><span class="w">
+    </span><span class="p" data-group-id="3951508005-2">}</span><span class="p" data-group-id="3951508005-1">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="fetch_matches/3">
@@ -287,8 +287,8 @@ Functions
       </div>
 
 <p>Fetches a list of matches for a given summoner puuid that matches all other 
-criteria passed in through <code class="inline">params</code></p><p>Example request:</p><pre><code class="makeup elixir"><span class="n">fetch_matches</span><span class="p" data-group-id="0975582435-1">(</span><span class="s">&quot;americas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abc123&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0975582435-2">%{</span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="ss">count</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="0975582435-2">}</span><span class="p" data-group-id="0975582435-1">)</span></code></pre><p>Example response:</p><pre><code class="makeup elixir"><span class="p" data-group-id="4334169902-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w">
-   </span><span class="p" data-group-id="4334169902-2">[</span><span class="s">&quot;NA1_4095008822&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NA1_4095014149&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NA1_4094938474&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NA1_4094905932&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NA1_4094903353&quot;</span><span class="p" data-group-id="4334169902-2">]</span><span class="p" data-group-id="4334169902-1">}</span></code></pre>
+criteria passed in through <code class="inline">params</code></p><p>Example request:</p><pre><code class="makeup elixir"><span class="n">fetch_matches</span><span class="p" data-group-id="1577479874-1">(</span><span class="s">&quot;americas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abc123&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1577479874-2">%{</span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="ss">count</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="1577479874-2">}</span><span class="p" data-group-id="1577479874-1">)</span></code></pre><p>Example response:</p><pre><code class="makeup elixir"><span class="p" data-group-id="9690834814-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w">
+   </span><span class="p" data-group-id="9690834814-2">[</span><span class="s">&quot;NA1_4095008822&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NA1_4095014149&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NA1_4094938474&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NA1_4094905932&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NA1_4094903353&quot;</span><span class="p" data-group-id="9690834814-2">]</span><span class="p" data-group-id="9690834814-1">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="fetch_summoner/2">
@@ -312,8 +312,8 @@ criteria passed in through <code class="inline">params</code></p><p>Example requ
 
       </div>
 
-<p>Fetches a summoner from the Riot API</p><p>Example request:</p><pre><code class="makeup elixir"><span class="n">fetch_summoner</span><span class="p" data-group-id="0428731210-1">(</span><span class="s">&quot;na1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mills&quot;</span><span class="p" data-group-id="0428731210-1">)</span></code></pre><p>Example response:</p><pre><code class="makeup elixir"><span class="p" data-group-id="3799784669-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="3799784669-2">%{</span><span class="w">
+<p>Fetches a summoner from the Riot API</p><p>Example request:</p><pre><code class="makeup elixir"><span class="n">fetch_summoner</span><span class="p" data-group-id="2769606224-1">(</span><span class="s">&quot;na1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mills&quot;</span><span class="p" data-group-id="2769606224-1">)</span></code></pre><p>Example response:</p><pre><code class="makeup elixir"><span class="p" data-group-id="4322068037-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="4322068037-2">%{</span><span class="w">
       </span><span class="s">&quot;accountId&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;uiEWb5xUaBh6JrbLgc7DBM05MnKG6VXX2lDjicVlU10lGg&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;id&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;uG3RHUMvuUPzq7fuJF8IdslZt8gzxslNxwgX91GdLUHLtxk&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;Mills&quot;</span><span class="p">,</span><span class="w">
@@ -322,7 +322,7 @@ criteria passed in through <code class="inline">params</code></p><p>Example requ
         </span><span class="s">&quot;WcHwXcrQJbyqgnsXGcYlvTrEPhAcB2e11pofFCioEcKEwEkRMaMD9qrYIkzz5-MVx4q6tZZsjBIBxA&quot;</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;revisionDate&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1_636_252_885_672</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;summonerLevel&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">245</span><span class="w">
-    </span><span class="p" data-group-id="3799784669-2">}</span><span class="p" data-group-id="3799784669-1">}</span></code></pre>
+    </span><span class="p" data-group-id="4322068037-2">}</span><span class="p" data-group-id="4322068037-1">}</span></code></pre>
   </section>
 </section>
 

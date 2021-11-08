@@ -7,10 +7,10 @@
     <meta name="generator" content="ExDoc v0.24.2">
     <meta name="project" content="blitz_lol v0.1.0">
 
-    <title>BlitzLoL — blitz_lol v0.1.0</title>
+    <title>About BlitzLoL — blitz_lol v0.1.0</title>
     <link rel="stylesheet" href="dist/elixir-a172fe91e725dcb259e2.css" />
 
-    <script src="dist/sidebar_items-d6b5a17038.js"></script>
+    <script src="dist/sidebar_items-9b3c4776a7.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -79,12 +79,11 @@ blitz_lol
   <div class="content-outer">
     <div id="content" class="content-inner">
 
-<h1>BlitzLoL</h1><h2 id="prompt" class="section-heading">
+<h1>About BlitzLoL</h1><h2 id="prompt" class="section-heading">
   <a href="#prompt" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Prompt
 </h2>
-<p>Create a mix project application that:
-Given a valid summoner_name and region will fetch all summoners this summoner has
+<p>Create a mix project application that:</p><p>Given a valid summoner_name and region will fetch all summoners this summoner has
 played with in the last 5 matches. This data is returned to the caller as a list of
 summoner names (see below). Also, the following occurs:
 Once fetched, all summoners will be monitored for new matches every minute
@@ -95,8 +94,16 @@ The returned data should be formatted as:</p><p><code class="inline">[summoner_n
   <a href="#setting-up-the-project" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Setting up the project
 </h2>
-<ul><li>Install dependencies (<a href="https://hexdocs.pm/mix/Mix.Tasks.Deps.Get.html"><code class="inline">mix deps.get</code></a>)</li><li>Create a <code class="inline">.env</code> file (<code class="inline">touch .env</code>)</li><li>Generate a valid Riot API Key <a href="`https://developer.riotgames.com/`">here</a></li><li>In that your <code class="inline">.env</code>, add your Riot API key like so:<pre><code class="makeup elixir"><span class="n">export</span><span class="w"> </span><span class="nc">RIOT_API_KEY</span><span class="o">=</span><span class="o">&lt;</span><span class="n">api</span><span class="o">-</span><span class="n">key</span><span class="o">&gt;</span></code></pre></li><li>Source your <code class="inline">.env</code> (<code class="inline">source .env</code>)</li><li>Start a new iex console (<code class="inline">iex -S mix</code>)</li><li>Run the following command with whatever summoner name you want:
-<code class="inline">track_recent_summoners_by_summoner_name(&quot;na1&quot;, &quot;mills&quot;)</code></li><li>A list of summoners will be returned, and as new matches are completed by those summoners, they will be logged to the console. There is an example output in the image below</li></ul><p>  <img src="https://user-images.githubusercontent.com/11325484/140663654-0d74b22e-1200-4664-9d2a-1b5b47cddee8.png" alt="image"/></p><p>The main modules in this app that are worth note are the following:</p><ul><li><a href="BlitzLol.Summoners.html"><code class="inline">BlitzLol.Summoners</code></a></li><li><a href="BlitzLol.RiotClient.html"><code class="inline">BlitzLol.RiotClient</code></a></li><li><a href="BlitzLol.Summoners.Region.html"><code class="inline">BlitzLol.Summoners.Region</code></a></li></ul>
+<ul><li>Install dependencies (<a href="https://hexdocs.pm/mix/Mix.Tasks.Deps.Get.html"><code class="inline">mix deps.get</code></a>)</li><li>Create a <code class="inline">.env</code> file (<code class="inline">touch .env</code>)</li><li>Generate a valid Riot API Key <a href="`https://developer.riotgames.com/`">here</a></li><li>In your <code class="inline">.env</code>, add your Riot API key like so:<pre><code class="makeup elixir"><span class="n">export</span><span class="w"> </span><span class="nc">RIOT_API_KEY</span><span class="o">=</span><span class="o">&lt;</span><span class="n">api</span><span class="o">-</span><span class="n">key</span><span class="o">&gt;</span></code></pre></li><li>Source your <code class="inline">.env</code> (<code class="inline">source .env</code>)</li><li>Start a new iex console (<code class="inline">iex -S mix</code>)</li><li>Run the following command with whatever summoner name and region you want:
+<code class="inline">BlitzLol.Summoners.track_recent_summoners_by_summoner_name(&quot;na1&quot;, &quot;mills&quot;)</code></li><li>A list of summoners will be returned, and as new matches are completed by those summoners, they will be logged to the console. There is an example output in the image below</li></ul><p>  <img src="https://user-images.githubusercontent.com/11325484/140663654-0d74b22e-1200-4664-9d2a-1b5b47cddee8.png" alt="image"/></p><h2 id="main-modules" class="section-heading">
+  <a href="#main-modules" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Main modules
+</h2>
+<p>Below are the main modules used for this project. Docs can be viewed for each by clicking on the name of the module.</p><ul><li><a href="BlitzLol.Summoners.html"><code class="inline">BlitzLol.Summoners</code></a></li><li><a href="BlitzLol.RiotClient.html"><code class="inline">BlitzLol.RiotClient</code></a></li><li><a href="BlitzLol.Summoners.Region.html"><code class="inline">BlitzLol.Summoners.Region</code></a></li></ul><h2 id="tests" class="section-heading">
+  <a href="#tests" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Tests
+</h2>
+<p>Tests can be found in the <code class="inline">test</code> directory of the project. API responses were mocked using the <code class="inline">mockery</code> library to avoid making network requests in tests.</p>
 <div class="bottom-actions">
   <div class="bottom-actions-item">
 

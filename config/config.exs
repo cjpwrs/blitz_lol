@@ -8,11 +8,12 @@
 import Config
 
 config :blitz_lol,
-  riot_api_key: System.get_env("RIOT_API_KEY") ||
-  raise """
-  environment variable RIOT_API_KEY is missing or
-  you need to source your .env file
-  """
+  riot_api_key:
+    System.get_env("RIOT_API_KEY") ||
+      raise("""
+      environment variable RIOT_API_KEY is missing or
+      you need to source your .env file
+      """)
 
 # Configures Elixir's Logger
 config :logger, :console,

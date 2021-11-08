@@ -17,7 +17,7 @@ defmodule BlitzLol.Summoners do
   @type region_type :: String.t()
 
   @doc """
-  Returns a list of summoners that a summoner has played with in their last 5 matches.
+  Returns a list of summoners that a summoner has played within their last 5 matches.
 
   The summoners will then be monitored for the next hour, and will check for a newly
   completed match every minute. If a new match is detected, then the summoner will
@@ -122,7 +122,7 @@ defmodule BlitzLol.Summoners do
     end)
   end
 
-  defp check_for_recent_matches(summoner, count, match_end_time, routing_value) do
+  defp check_for_recent_matches(summoner, minute, match_end_time, routing_value) do
     receive do
     after
       60_000 ->
@@ -144,8 +144,8 @@ defmodule BlitzLol.Summoners do
             {:error, error}
         end
 
-        if count < 60,
-          do: check_for_recent_matches(summoner, count + 1, current_unix_time(), routing_value)
+        if minute <= 60,
+          do: check_for_recent_matches(summoner, minute + 1, current_unix_time(), routing_value)
     end
   end
 
