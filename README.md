@@ -27,3 +27,5 @@ The returned data should be formatted as:
   * Run the following command with whatever summoner name you want:
   `track_recent_summoners_by_summoner_name("na1", "mills")`
   * A list of summoners will be returned, and as new matches are completed by those summoners, they will be logged to the console. There is an example output in the image below
+
+  ![image](https://user-images.githubusercontent.com/11325484/140663654-0d74b22e-1200-4664-9d2a-1b5b47cddee8.png)
