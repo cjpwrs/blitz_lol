@@ -21,7 +21,10 @@ defmodule BlitzLol.Summoners do
 
   The summoners will then be monitored for the next hour, and will check for a newly
   completed match every minute. If a new match is detected, then the summoner will
-  be logged out along with the match they completed.
+  be logged out along with the match they completed. This is handled by a separate process
+  for each summoner, and runs through a recursive function that passes in the previous timestamp
+  so that we can request only matches that have completed since the previous check. The function
+  will exit once we have checked 60 times.
 
   Example request:
   ```elixir
@@ -114,6 +117,7 @@ defmodule BlitzLol.Summoners do
   defp track_summoners_for_next_hour(summoners, routing_value) do
     match_end_time = current_unix_time()
 
+    # spawn a separate process for each summoner so they can run independently in the background
     Enum.each(summoners, fn summoner ->
       Task.start(fn -> check_for_recent_matches(summoner, 1, match_end_time, routing_value) end)
 
@@ -125,6 +129,7 @@ defmodule BlitzLol.Summoners do
   defp check_for_recent_matches(summoner, minute, match_end_time, routing_value) do
     receive do
     after
+      # after 60 seconds, check for a new match completed since the last time checked
       60_000 ->
         case riot_client().fetch_matches(routing_value, summoner.puuid, %{
                start: 0,

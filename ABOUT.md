@@ -22,7 +22,7 @@ The returned data should be formatted as:
 ## Setting up the project
   * Install dependencies (`mix deps.get`)
   * Create a `.env` file (`touch .env`)
-  * Generate a valid Riot API Key [here](`https://developer.riotgames.com/`)
+  * Generate a valid Riot API Key [here](https://developer.riotgames.com/)
   * In your `.env`, add your Riot API key like so:
   ```
   export RIOT_API_KEY=<api-key>
