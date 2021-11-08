@@ -19,6 +19,7 @@ defmodule BlitzLol.MixProject do
     [
       main: "readme",
       extras: [
+        "ABOUT.md",
         "README.md"
       ]
     ]
@@ -29,7 +30,7 @@ defmodule BlitzLol.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {BlitzLol.Application, []},
+      # mod: {BlitzLol.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -44,23 +45,15 @@ defmodule BlitzLol.MixProject do
   defp deps do
     [
       {:phoenix, "~> 1.6.2"},
-      {:phoenix_ecto, "~> 4.4"},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 0.16.0"},
       {:floki, ">= 0.30.0", only: :test},
-      {:phoenix_live_dashboard, "~> 0.5"},
       {:esbuild, "~> 0.2", runtime: Mix.env() == :dev},
-      {:swoosh, "~> 1.3"},
-      {:telemetry_metrics, "~> 0.6"},
-      {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
-      {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"},
       {:httpoison, "~> 1.8"},
       {:poison, "~> 5.0"},
       {:mockery, "~> 2.3.0", runtime: false},
-      {:gen_stage, "~> 1.1"},
       {:ex_doc, "~> 0.24.0", only: :dev, runtime: false}
     ]
   end

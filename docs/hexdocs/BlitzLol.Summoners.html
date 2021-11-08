@@ -10,7 +10,7 @@
     <title>BlitzLol.Summoners — blitz_lol v0.1.0</title>
     <link rel="stylesheet" href="dist/elixir-a172fe91e725dcb259e2.css" />
 
-    <script src="dist/sidebar_items-61b098826d.js"></script>
+    <script src="dist/sidebar_items-d6b5a17038.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -109,8 +109,8 @@ BlitzLol.Summoners <small class="app-vsn">(blitz_lol v0.1.0)</small>
 
   </div>
 
-    <div class="summary-synopsis"><p>A region defined by the Riot API. Can be one of br1, eun1, euw1, jp1, kr,
-la1, la2, na1, oc1, ru, tr1</p></div>
+    <div class="summary-synopsis"><p>A region defined by the Riot API. Can be one of <code class="inline">br1</code>, <code class="inline">eun1</code>, <code class="inline">euw1</code>, <code class="inline">jp1</code>, <code class="inline">kr</code>,
+<code class="inline">la1</code>, <code class="inline">la2</code>, <code class="inline">na1</code>, <code class="inline">oc1</code>, <code class="inline">ru</code>, <code class="inline">tr1</code></p></div>
 
 </div>
 
@@ -120,13 +120,6 @@ la1, la2, na1, oc1, ru, tr1</p></div>
     <h2>
       <a href="#functions">Functions</a>
     </h2>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#check_for_recent_matches/4">check_for_recent_matches(summoner, count, match_end_time, routing_value)</a>
-
-  </div>
-
-</div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#track_recent_summoners_by_summoner_name/2">track_recent_summoners_by_summoner_name(region, summoner_name)</a>
@@ -172,8 +165,8 @@ Types
 
       </div>
 
-<p>A region defined by the Riot API. Can be one of br1, eun1, euw1, jp1, kr,
-la1, la2, na1, oc1, ru, tr1</p>
+<p>A region defined by the Riot API. Can be one of <code class="inline">br1</code>, <code class="inline">eun1</code>, <code class="inline">euw1</code>, <code class="inline">jp1</code>, <code class="inline">kr</code>,
+<code class="inline">la1</code>, <code class="inline">la2</code>, <code class="inline">na1</code>, <code class="inline">oc1</code>, <code class="inline">ru</code>, <code class="inline">tr1</code></p>
   </section>
 </section>
 
@@ -189,23 +182,6 @@ la1, la2, na1, oc1, ru, tr1</p>
 Functions
           </h1>
           <div class="functions-list">
-<section class="detail" id="check_for_recent_matches/4">
-
-  <div class="detail-header">
-    <a href="#check_for_recent_matches/4" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature">check_for_recent_matches(summoner, count, match_end_time, routing_value)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
 <section class="detail" id="track_recent_summoners_by_summoner_name/2">
 
   <div class="detail-header">
@@ -230,15 +206,15 @@ Functions
 
 <p>Returns a list of summoners that a summoner has played with in their last 5 matches.</p><p>The summoners will then be monitored for the next hour, and will check for a newly
 completed match every minute. If a new match is detected, then the summoner will
-be logged out along with the match they completed.</p><p>Example request:</p><pre><code class="makeup elixir"><span class="n">track_recent_summoners_by_summoner_name</span><span class="p" data-group-id="6799482346-1">(</span><span class="s">&quot;na1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mills&quot;</span><span class="p" data-group-id="6799482346-1">)</span></code></pre><p>Example response:</p><pre><code class="makeup elixir"><span class="p" data-group-id="9995268239-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w">
-  </span><span class="p" data-group-id="9995268239-2">[</span><span class="s">&quot;Tom The Killer&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jeam kai&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;styrofoamcond0m&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ZubatUsedLowKick&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Krhaal&quot;</span><span class="p">,</span><span class="w">
+be logged out along with the match they completed.</p><p>Example request:</p><pre><code class="makeup elixir"><span class="n">track_recent_summoners_by_summoner_name</span><span class="p" data-group-id="5357074005-1">(</span><span class="s">&quot;na1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mills&quot;</span><span class="p" data-group-id="5357074005-1">)</span></code></pre><p>Example response:</p><pre><code class="makeup elixir"><span class="p" data-group-id="6714462707-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w">
+  </span><span class="p" data-group-id="6714462707-2">[</span><span class="s">&quot;Tom The Killer&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jeam kai&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;styrofoamcond0m&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ZubatUsedLowKick&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Krhaal&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;Snytz&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Kamstuh&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Nef&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Rogue Armadillo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;greNinjaSquid&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;esterxk&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;the derpy guy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tamish3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;BigSid14&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Eurynnome&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Madarame Ikkaku&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;Foxiest Boxes&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ThyneBowlCut&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;LOAFman2020&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;EXP3RIENCE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Lóng gone&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;JoshMcDooDoo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Slain&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Flzcko&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1HPNotEvenClose&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Picheese&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;nex991&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;HerbalHelper25&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Kosher Dubstep&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;StanislawLeafrak&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;EmErEldSquEd&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;TheFilipinosMom&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Andpv&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;SauceZzz&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Chef Pasquale&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NO69U&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s">&quot;ExpIosìon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Raghadast&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Gugulaka&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PANDAMAN3659&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Deleted282&quot;</span><span class="p" data-group-id="9995268239-2">]</span><span class="p" data-group-id="9995268239-1">}</span></code></pre>
+    </span><span class="s">&quot;ExpIosìon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Raghadast&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Gugulaka&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PANDAMAN3659&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Deleted282&quot;</span><span class="p" data-group-id="6714462707-2">]</span><span class="p" data-group-id="6714462707-1">}</span></code></pre>
   </section>
 </section>
 

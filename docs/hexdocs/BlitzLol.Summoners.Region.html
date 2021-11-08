@@ -10,7 +10,7 @@
     <title>BlitzLol.Summoners.Region — blitz_lol v0.1.0</title>
     <link rel="stylesheet" href="dist/elixir-a172fe91e725dcb259e2.css" />
 
-    <script src="dist/sidebar_items-61b098826d.js"></script>
+    <script src="dist/sidebar_items-d6b5a17038.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -109,12 +109,17 @@ BlitzLol.Summoners.Region <small class="app-vsn">(blitz_lol v0.1.0)</small>
 
   </div>
 
+    <div class="summary-synopsis"><p>Returns the correct routing_key for the provided region</p></div>
+
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#validate_region/1">validate_region(region)</a>
 
   </div>
+
+    <div class="summary-synopsis"><p>Validates the provided region. Returns on :ok tuple if valid, and an :error
+tuple if invalid</p></div>
 
 </div>
 
@@ -146,7 +151,14 @@ Functions
 
   <section class="docstring">
 
+      <h2>Specs</h2>
+      <div class="specs">
 
+          <pre>get_routing_key_for_region(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil</pre>
+
+      </div>
+
+<p>Returns the correct routing_key for the provided region</p>
   </section>
 </section>
 <section class="detail" id="validate_region/1">
@@ -163,7 +175,15 @@ Functions
 
   <section class="docstring">
 
+      <h2>Specs</h2>
+      <div class="specs">
 
+          <pre>validate_region(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: {:ok, <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()} | {:error, <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()}</pre>
+
+      </div>
+
+<p>Validates the provided region. Returns on :ok tuple if valid, and an :error
+tuple if invalid</p>
   </section>
 </section>
 

@@ -17,6 +17,11 @@ defmodule BlitzLol.Summoners.Region do
     "tr1" => "europe"
   }
 
+  @doc """
+  Validates the provided region. Returns on :ok tuple if valid, and an :error
+  tuple if invalid
+  """
+  @spec validate_region(String.t()) :: {:ok, String.t()} | {:error, String.t()}
   def validate_region(region) do
     case Map.has_key?(@region_routing_mappings, region) do
       true ->
@@ -28,6 +33,10 @@ defmodule BlitzLol.Summoners.Region do
     end
   end
 
+  @doc """
+  Returns the correct routing_key for the provided region
+  """
+  @spec get_routing_key_for_region(String.t()) :: String.t() | nil
   def get_routing_key_for_region(region) do
     Map.get(@region_routing_mappings, region)
   end

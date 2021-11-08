@@ -11,8 +11,8 @@ defmodule BlitzLol.Summoners do
   import Mockery.Macro
 
   @typedoc """
-  A region defined by the Riot API. Can be one of br1, eun1, euw1, jp1, kr,
-  la1, la2, na1, oc1, ru, tr1
+  A region defined by the Riot API. Can be one of `br1`, `eun1`, `euw1`, `jp1`, `kr`,
+  `la1`, `la2`, `na1`, `oc1`, `ru`, `tr1`
   """
   @type region_type :: String.t()
 
@@ -122,7 +122,7 @@ defmodule BlitzLol.Summoners do
     end)
   end
 
-  def check_for_recent_matches(summoner, count, match_end_time, routing_value) do
+  defp check_for_recent_matches(summoner, count, match_end_time, routing_value) do
     receive do
     after
       60_000 ->

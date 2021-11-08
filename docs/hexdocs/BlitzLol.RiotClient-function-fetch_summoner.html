@@ -10,7 +10,7 @@
     <title>BlitzLol.RiotClient.fetch_summoner — blitz_lol v0.1.0</title>
     <link rel="stylesheet" href="dist/elixir-a172fe91e725dcb259e2.css" />
 
-    <script src="dist/sidebar_items-61b098826d.js"></script>
+    <script src="dist/sidebar_items-d6b5a17038.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -99,7 +99,24 @@ blitz_lol
 
   <section class="docstring">
 
+      <h2>Specs</h2>
+      <div class="specs">
 
+          <pre>fetch_summoner(<a href="#t:region_type/0">region_type</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
+
+      </div>
+
+<p>Fetches a summoner from the Riot API</p><p>Example request:</p><pre><code class="makeup elixir"><span class="n">fetch_summoner</span><span class="p" data-group-id="0428731210-1">(</span><span class="s">&quot;na1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mills&quot;</span><span class="p" data-group-id="0428731210-1">)</span></code></pre><p>Example response:</p><pre><code class="makeup elixir"><span class="p" data-group-id="3799784669-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="3799784669-2">%{</span><span class="w">
+      </span><span class="s">&quot;accountId&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;uiEWb5xUaBh6JrbLgc7DBM05MnKG6VXX2lDjicVlU10lGg&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="s">&quot;id&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;uG3RHUMvuUPzq7fuJF8IdslZt8gzxslNxwgX91GdLUHLtxk&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;Mills&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="s">&quot;profileIconId&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">940</span><span class="p">,</span><span class="w">
+      </span><span class="s">&quot;puuid&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w">
+        </span><span class="s">&quot;WcHwXcrQJbyqgnsXGcYlvTrEPhAcB2e11pofFCioEcKEwEkRMaMD9qrYIkzz5-MVx4q6tZZsjBIBxA&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="s">&quot;revisionDate&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1_636_252_885_672</span><span class="p">,</span><span class="w">
+      </span><span class="s">&quot;summonerLevel&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">245</span><span class="w">
+    </span><span class="p" data-group-id="3799784669-2">}</span><span class="p" data-group-id="3799784669-1">}</span></code></pre>
   </section>
 </section>
 

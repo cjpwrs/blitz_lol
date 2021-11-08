@@ -10,7 +10,7 @@
     <title>BlitzLol.RiotClient.fetch_matches — blitz_lol v0.1.0</title>
     <link rel="stylesheet" href="dist/elixir-a172fe91e725dcb259e2.css" />
 
-    <script src="dist/sidebar_items-61b098826d.js"></script>
+    <script src="dist/sidebar_items-d6b5a17038.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -92,14 +92,24 @@ blitz_lol
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature">fetch_matches(region, puuid, params)</h1>
+    <h1 class="signature">fetch_matches(routing_value, puuid, params)</h1>
 
 
   </div>
 
   <section class="docstring">
 
+      <h2>Specs</h2>
+      <div class="specs">
 
+          <pre>fetch_matches(<a href="#t:routing_value_type/0">routing_value_type</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
+  {:ok, [<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()]} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
+
+      </div>
+
+<p>Fetches a list of matches for a given summoner puuid that matches all other 
+criteria passed in through <code class="inline">params</code></p><p>Example request:</p><pre><code class="makeup elixir"><span class="n">fetch_matches</span><span class="p" data-group-id="0975582435-1">(</span><span class="s">&quot;americas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abc123&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0975582435-2">%{</span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="ss">count</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="0975582435-2">}</span><span class="p" data-group-id="0975582435-1">)</span></code></pre><p>Example response:</p><pre><code class="makeup elixir"><span class="p" data-group-id="4334169902-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w">
+   </span><span class="p" data-group-id="4334169902-2">[</span><span class="s">&quot;NA1_4095008822&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NA1_4095014149&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NA1_4094938474&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NA1_4094905932&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NA1_4094903353&quot;</span><span class="p" data-group-id="4334169902-2">]</span><span class="p" data-group-id="4334169902-1">}</span></code></pre>
   </section>
 </section>
 
