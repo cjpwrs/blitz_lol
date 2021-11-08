@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+set -e
+
+# Hexdocs
+mix docs --output docs/hexdocs > /dev/null

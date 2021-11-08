@@ -10,7 +10,17 @@ defmodule BlitzLol.MixProject do
       compilers: [:gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      docs: docs()
+    ]
+  end
+
+  def docs do
+    [
+      main: "readme",
+      extras: [
+        "README.md"
+      ]
     ]
   end
 
@@ -50,7 +60,8 @@ defmodule BlitzLol.MixProject do
       {:httpoison, "~> 1.8"},
       {:poison, "~> 5.0"},
       {:mockery, "~> 2.3.0", runtime: false},
-      {:gen_stage, "~> 1.1"}
+      {:gen_stage, "~> 1.1"},
+      {:ex_doc, "~> 0.24.0", only: :dev, runtime: false}
     ]
   end
 
@@ -62,10 +73,8 @@ defmodule BlitzLol.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      setup: ["deps.get", "ecto.setup"],
-      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
+      setup: ["deps.get"],
+      test: ["test"],
       "assets.deploy": ["esbuild default --minify", "phx.digest"]
     ]
   end

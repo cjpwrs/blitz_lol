@@ -1,4 +1,4 @@
-defmodule Blitz.Lol.Summoners do
+defmodule BlitzLol.Summoners do
   @moduledoc """
   Context module for interacting with summoners
   """
@@ -8,13 +8,54 @@ defmodule Blitz.Lol.Summoners do
   }
 
   require Logger
+  import Mockery.Macro
+
+  @typedoc """
+  A region defined by the Riot API. Can be one of br1, eun1, euw1, jp1, kr,
+  la1, la2, na1, oc1, ru, tr1
+  """
+  @type region_type :: String.t()
+
+  @doc """
+  Returns a list of summoners that a summoner has played with in their last 5 matches.
+
+  The summoners will then be monitored for the next hour, and will check for a newly
+  completed match every minute. If a new match is detected, then the summoner will
+  be logged out along with the match they completed.
+
+  Example request:
+  ```elixir
+  track_recent_summoners_by_summoner_name("na1", "mills")
+  ```
+
+
+  Example response:
+  ```elixir
+  {:ok,
+    ["Tom The Killer", "Jeam kai", "styrofoamcond0m", "ZubatUsedLowKick", "Krhaal",
+      "Snytz", "Kamstuh", "Nef", "Rogue Armadillo", "greNinjaSquid", "esterxk",
+      "the derpy guy", "tamish3", "BigSid14", "Eurynnome", "Madarame Ikkaku",
+      "Foxiest Boxes", "ThyneBowlCut", "LOAFman2020", "EXP3RIENCE", "Lóng gone",
+      "JoshMcDooDoo", "Slain", "Flzcko", "1HPNotEvenClose", "Picheese", "nex991",
+      "HerbalHelper25", "Kosher Dubstep", "StanislawLeafrak", "EmErEldSquEd",
+      "TheFilipinosMom", "Andpv", "SauceZzz", "Chef Pasquale", "NO69U",
+      "ExpIosìon", "Raghadast", "Gugulaka", "PANDAMAN3659", "Deleted282"]}
+  ```
+  """
+  @spec track_recent_summoners_by_summoner_name(region_type(), String.t()) ::
+          {:ok, list(String.t())} | {:error, any()}
+  def track_recent_summoners_by_summoner_name(_region, ""),
+    do: {:error, "Summoner name cannot be empty"}
+
+  def track_recent_summoners_by_summoner_name(_region, nil),
+    do: {:error, "Summoner name cannot be nil"}
 
   def track_recent_summoners_by_summoner_name(region, summoner_name) do
     with {:ok, _} <- Region.validate_region(region),
          routing_value = Region.get_routing_key_for_region(region),
-         {:ok, current_summoner} <- RiotClient.fetch_summoner(region, summoner_name),
+         {:ok, current_summoner} <- riot_client().fetch_summoner(region, summoner_name),
          {:ok, match_ids} <-
-           RiotClient.fetch_matches(routing_value, current_summoner["puuid"], %{
+           riot_client().fetch_matches(routing_value, current_summoner["puuid"], %{
              start: 0,
              count: 5
            }),
@@ -35,7 +76,7 @@ defmodule Blitz.Lol.Summoners do
   defp get_summoners_played_with_recently(current_summoner_puuid, routing_value, match_ids) do
     summoners =
       Enum.reduce(match_ids, [], fn match_id, acc ->
-        case RiotClient.fetch_match(routing_value, match_id) do
+        case riot_client().fetch_match(routing_value, match_id) do
           {:ok, match} ->
             info = Map.get(match, "info", %{})
             raw_participants = Map.get(info, "participants", [])
@@ -85,7 +126,7 @@ defmodule Blitz.Lol.Summoners do
     receive do
     after
       60_000 ->
-        case RiotClient.fetch_matches(routing_value, summoner.puuid, %{
+        case riot_client().fetch_matches(routing_value, summoner.puuid, %{
                start: 0,
                count: 1,
                startTime: match_end_time
@@ -112,4 +153,6 @@ defmodule Blitz.Lol.Summoners do
     DateTime.utc_now()
     |> DateTime.to_unix()
   end
+
+  defp riot_client, do: mockable(RiotClient, by: BlitzLol.RiotClientMock)
 end

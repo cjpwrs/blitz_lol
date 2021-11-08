@@ -23,7 +23,8 @@ defmodule BlitzLol.Summoners.Region do
         {:ok, "valid"}
 
       false ->
-        {:error, "invalid region, must be one of #{Map.keys(@region_routing_mappings)}"}
+        {:error,
+         "Invalid region, must be one of #{Enum.join(Map.keys(@region_routing_mappings), ", ")}"}
     end
   end
 
