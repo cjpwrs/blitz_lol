@@ -1,5 +1,8 @@
 # About BlitzLoL
 
+## Github
+The github repo can be found [here](https://github.com/cjpwrs/blitz_lol)
+
 ## Prompt
 Create a mix project application that:
 
